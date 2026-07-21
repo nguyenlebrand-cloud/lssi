@@ -6,3 +6,5 @@ ipconfig getifaddr en0       # lấy IP Mac (không ra thì thử en1)
 curl http://localhost:11434/api/tags           # tự test trên Mac
 192.168.1.67
 lsof -nP -iTCP:11434 -sTCP:LISTEN
+COMMAND PID       USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+ollama  980 nhanvien01    4u  IPv4 0x1fd06b5d1928d3f3      0t0  TCP 127.0.0.1:11434 (LISTEN)
