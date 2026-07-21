@@ -5,3 +5,4 @@ launchctl setenv OLLAMA_HOST "0.0.0.0:11434"   # BẮT BUỘC, nếu không Wind
 ipconfig getifaddr en0       # lấy IP Mac (không ra thì thử en1)
 curl http://localhost:11434/api/tags           # tự test trên Mac
 192.168.1.67
+lsof -nP -iTCP:11434 -sTCP:LISTEN
