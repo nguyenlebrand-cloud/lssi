@@ -8,3 +8,9 @@ curl http://localhost:11434/api/tags           # tự test trên Mac
 lsof -nP -iTCP:11434 -sTCP:LISTEN
 COMMAND PID       USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
 ollama  980 nhanvien01    4u  IPv4 0x1fd06b5d1928d3f3      0t0  TCP 127.0.0.1:11434 (LISTEN)
+# 1. Quit app Ollama trên thanh menu TRƯỚC (nếu đang chạy bản app) — quan trọng,
+#    vì app sẽ tự hồi sinh server với env cũ, pkill không đủ.
+pkill ollama
+
+# 2. Chạy thẳng, ép binding:
+OLLAMA_HOST=0.0.0.0:11434 ollama serve
